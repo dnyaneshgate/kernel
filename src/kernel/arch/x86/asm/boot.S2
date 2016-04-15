@@ -1,0 +1,25 @@
+
+.set STACK_SIZE, 0x4000
+.set MBOOT_HEADER_FLAGS, 0x0
+.set MBOOT_HEADER_MAGIC, 0x1BADB002
+.set MBOOT_HEADER_CHECKSUM, -(MBOOT_HEADER_MAGIC + MBOOT_HEADER_FLAGS)
+
+.section .mboot
+	.align 4
+	.long MBOOT_HEADER_MAGIC
+	.long MBOOT_HEADER_FLAGS
+	.long MBOOT_HEADER_CHECKSUM
+
+.section .text
+.global _start
+_start:
+	movl $stack_top, %esp
+	call _kmain
+_loop:
+	hlt
+	jmp _loop
+
+.section .bss
+stack_bottom:
+	.skip STACK_SIZE
+stack_top:
