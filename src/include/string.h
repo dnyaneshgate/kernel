@@ -8,6 +8,10 @@
 extern "C" {
 #endif
 
+void memset(void* src, char c, size_t size);
+void memset_w( void* dest, short c, size_t size );
+void memset_l( void* dest, int c, size_t size );
+
 void* memcpy(void* to, const void* from, size_t len);
 void* memcpy_b(void* to, const void* from, size_t len);
 void* memcpy_w(void* to, const void* from, size_t len);

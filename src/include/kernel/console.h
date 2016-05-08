@@ -1,9 +1,7 @@
 
-#ifndef __SRC_INCLUDE_KERNEL_CONSOLE_HPP__
-#define __SRC_INCLUDE_KERNEL_CONSOLE_HPP__
+#ifndef __SRC_INCLUDE_KERNEL_CONSOLE_H__
+#define __SRC_INCLUDE_KERNEL_CONSOLE_H__
 
-namespace io {
-namespace console {
 enum {
     COLOR_BLACK = 0,
     COLOR_BLUE = 1,
@@ -23,11 +21,9 @@ enum {
     COLOR_WHITE = 15,
 };
 
-void clear();
-void print( const char* string );
-void printf( const char* format, ... ) __attribute__((format( printf, 1, 2 )));
+void console_init();
+void console_clear();
+void console_print( const char* string );
+void console_printf( const char* format, ... ) __attribute__((format( printf, 1, 2 )));
 
-} /* namespace console */
-} /* namespace io */
-
-#endif //__SRC_INCLUDE_KERNEL_CONSOLE_HPP__
+#endif //__SRC_INCLUDE_KERNEL_CONSOLE_H__

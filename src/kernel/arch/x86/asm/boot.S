@@ -45,10 +45,14 @@ multiboot_entry:
 
     // push magic value
     pushl %eax
+    
+    //movl $1, %eax
+    //pushl %eax
 
     call _kmain
 
 loop:
+    cli
     hlt
     jmp loop
 

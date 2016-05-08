@@ -95,25 +95,28 @@
         <VirtualDirectory Name="x86">
           <VirtualDirectory Name="asm">
             <File Name="src/kernel/arch/x86/asm/boot.S"/>
+            <File Name="src/kernel/arch/x86/asm/interrupt.S"/>
           </VirtualDirectory>
-          <File Name="src/kernel/arch/x86/port.cpp"/>
           <File Name="src/kernel/arch/x86/gdt.c"/>
+          <File Name="src/kernel/arch/x86/idt.c"/>
+          <File Name="src/kernel/arch/x86/port.c"/>
         </VirtualDirectory>
       </VirtualDirectory>
-      <File Name="src/kernel/console.cpp"/>
-      <File Name="src/kernel/kmain.cpp"/>
+      <File Name="src/kernel/console.c"/>
+      <File Name="src/kernel/kmain.c"/>
     </VirtualDirectory>
     <VirtualDirectory Name="include">
       <VirtualDirectory Name="kernel">
-        <File Name="src/include/kernel/console.hpp"/>
         <File Name="src/include/kernel/multiboot.h"/>
         <VirtualDirectory Name="arch">
           <VirtualDirectory Name="x86">
-            <File Name="src/include/kernel/arch/x86/port.hpp"/>
             <File Name="src/include/kernel/arch/x86/gdt.h"/>
             <File Name="src/include/kernel/arch/x86/cpu.h"/>
+            <File Name="src/include/kernel/arch/x86/idt.h"/>
+            <File Name="src/include/kernel/arch/x86/port.h"/>
           </VirtualDirectory>
         </VirtualDirectory>
+        <File Name="src/include/kernel/console.h"/>
       </VirtualDirectory>
       <File Name="src/include/stdint.h"/>
       <File Name="src/include/string.h"/>
@@ -123,6 +126,7 @@
       <File Name="src/lib/memcpy.c"/>
       <File Name="src/lib/string.c"/>
       <File Name="src/lib/vsprintf.c"/>
+      <File Name="src/lib/memset.c"/>
     </VirtualDirectory>
     <VirtualDirectory Name="linker">
       <File Name="src/linker/linker.ld"/>
